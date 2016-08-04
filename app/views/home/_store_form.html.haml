@@ -1,0 +1,27 @@
+= form_for start_up_users_path do
+  - if @store.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@store.errors.count, "error")} prohibited this store from being saved:"
+      %ul
+        - @store.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = label_tag :name
+    = text_field :store,:name,value: "Store1"
+  .field
+    = label_tag :phone
+    = text_field :store, :phone, value: "08099999999"
+  .field
+    = label_tag :description
+    = text_area :store,:description
+  .field
+    = label_tag :start_biz_hours
+    = text_field :store, :start_biz_hours, value: "10:00"
+  .field
+    = label_tag :end_biz_hours
+    = text_field :store, :end_biz_hours, value: "19:00"
+  .field
+    = label_tag :clock_in_time
+    = number_field :store, :clock_in_time,value: 540
+  .field
+    = submit_tag :ok

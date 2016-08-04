@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @store.user
+%p
+  %b Name:
+  = @store.name
+%p
+  %b Description:
+  = @store.description
+%p
+  %b Main image:
+  = @store.main_image
+%p
+  %b Start biz hours:
+  = @store.start_biz_hours
+%p
+  %b End biz hours:
+  = @store.end_biz_hours
+%p
+  %b Clock in time:
+  = @store.clock_in_time
+
+= link_to 'Edit', edit_store_path(@store)
+\|
+= link_to 'Back', stores_path

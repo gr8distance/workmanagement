@@ -1,0 +1,33 @@
+%h1 Listing stores
+
+%table
+  %thead
+    %tr
+      %th User
+      %th Name
+      %th Description
+      %th Main image
+      %th Start biz hours
+      %th End biz hours
+      %th Clock in time
+      %th
+      %th
+      %th
+
+  %tbody
+    - @stores.each do |store|
+      %tr
+        %td= store.user
+        %td= store.name
+        %td= store.description
+        %td= store.main_image
+        %td= store.start_biz_hours
+        %td= store.end_biz_hours
+        %td= store.clock_in_time
+        %td= link_to 'Show', store
+        %td= link_to 'Edit', edit_store_path(store)
+        %td= link_to 'Destroy', store, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Store', new_store_path
